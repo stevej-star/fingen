@@ -5,3 +5,5 @@ Quick and simple script to generate valid fin messages with variables for useful
 Generates a random UETR and Transaction reference, also a file name using the date and time.
 
 To run, just do `node fin-generator.js`
+
+Make sure to edit the output folder to something different

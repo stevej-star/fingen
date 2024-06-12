@@ -8,7 +8,7 @@ const toBusinessAccount = false
 const sanctionCheck = false
 const fraudCheck = false
 const failMessage = false
-const closedAccount = false
+const closedAccount = true
 const closedCassOut = false
 
 const outputFolder = "/Users/steve.jones/code/finmessagegen/generated"
@@ -33,8 +33,9 @@ const beneficaryAccount = getBeneficiary()
 const beneficaryName="Steve"
 const senderAccount=":60837105163870"
 const senderName="Dumbledore"
-const sanctionedSenderName = "NapierAutoOpen"
-const senderCountry="UAE"
+const sanctionedSenderName = "NapierAutoReject"
+const senderCountry="GB"
+const senderCity="London"
 const remittenceInfo="TestMessageGenerator"
 
 function getBeneficiary() {
@@ -79,7 +80,7 @@ const finMessage = `{1:F01${starlingBic}0000000000}{2:O1030000230831${fromJpm ? 
 :33B:${currency}${fraudCheck ? largeAmount : amount}
 :50K:/${senderAccount}
 ${sanctionCheck ? sanctionedSenderName : senderName}
-SOMEWHERE /${senderCountry}
+${senderCity} /${senderCountry}
 N1 7FQ
 :52A:${jpmBic}
 :59:/${beneficaryAccount}
